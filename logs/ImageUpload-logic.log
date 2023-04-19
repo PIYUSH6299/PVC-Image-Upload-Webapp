@@ -1,0 +1,86 @@
+Level is NOT DEBUG. There will be no wait.
+Trying to login. If you are NOT logged in, there will be a prompt
+Authenticating with existing credentials...
+Login Succeeded
+Building image-upload-logic
+Sending build context to Docker daemon  57.34kB
+Step 1/9 : FROM node:15.14.0
+ ---> 3d3f41722daf
+Step 2/9 : WORKDIR /app
+ ---> Using cache
+ ---> 4809458d0445
+Step 3/9 : COPY package.json /app/package.json
+ ---> Using cache
+ ---> da5ccfe952ee
+Step 4/9 : RUN npm install --silent
+ ---> Using cache
+ ---> 306ef4addc5f
+Step 5/9 : COPY . /app
+ ---> 51ee4e840ca6
+Step 6/9 : RUN pwd
+ ---> Running in 0649922bdd2a
+/app
+Removing intermediate container 0649922bdd2a
+ ---> fb4b83c39431
+Step 7/9 : RUN ls -lrt
+ ---> Running in dcaa944b0f0d
+total 72
+-rw-rw-r--  1 root root   424 Aug 15 03:46 server.js
+drwxrwxr-x  2 root root  4096 Aug 15 03:46 public
+-rw-rw-r--  1 root root   316 Aug 15 03:46 package.json
+-rw-rw-r--  1 root root 41692 Aug 15 03:46 package-lock.json
+-rw-rw-r--  1 root root   547 Aug 15 03:46 Dockerfile
+drwxr-xr-x 70 root root  4096 Dec 18 14:20 node_modules
+-rw-rw-r--  1 root root  2819 Jan  5 08:19 Jenkinsfile
+-rw-rw-r--  1 root root  1535 Jan  5 08:56 BuildImageUploadLogicDocker.sh
+Removing intermediate container dcaa944b0f0d
+ ---> 4ca4b288a0bd
+Step 8/9 : EXPOSE 80
+ ---> Running in 50bb9ab6d8ad
+Removing intermediate container 50bb9ab6d8ad
+ ---> a1657425e3c8
+Step 9/9 : CMD ["npm","start", "-g", "daemon off;"]
+ ---> Running in 08a05c790934
+Removing intermediate container 08a05c790934
+ ---> f6d4da5fdaeb
+Successfully built f6d4da5fdaeb
+Successfully tagged piyush9090/image-upload-logic:latest
+Pushing image-upload-logic
+Using default tag: latest
+The push refers to repository [docker.io/piyush9090/image-upload-logic]
+c01d6d0f6bfe: Preparing
+61414a2c4042: Preparing
+30c2d06950dd: Preparing
+f4ca4ce8413d: Preparing
+f92723793659: Preparing
+f0d8cfcdba81: Preparing
+4a06816805a3: Preparing
+b257e69d416f: Preparing
+1e9c28d06610: Preparing
+cddb98d77163: Preparing
+ed0a3d9cbcc7: Preparing
+f0d8cfcdba81: Waiting
+4a06816805a3: Waiting
+b257e69d416f: Waiting
+cddb98d77163: Waiting
+1e9c28d06610: Waiting
+ed0a3d9cbcc7: Waiting
+8c8e652ecd8f: Preparing
+2f4ee6a2e1b5: Preparing
+8c8e652ecd8f: Waiting
+2f4ee6a2e1b5: Waiting
+f92723793659: Layer already exists
+61414a2c4042: Layer already exists
+f4ca4ce8413d: Layer already exists
+f0d8cfcdba81: Layer already exists
+b257e69d416f: Layer already exists
+30c2d06950dd: Layer already exists
+4a06816805a3: Layer already exists
+cddb98d77163: Layer already exists
+1e9c28d06610: Layer already exists
+ed0a3d9cbcc7: Layer already exists
+2f4ee6a2e1b5: Layer already exists
+8c8e652ecd8f: Layer already exists
+c01d6d0f6bfe: Pushed
+latest: digest: sha256:f9153a8520cc31423b1ec3fcc01b91679094ae005a2a34ed51b3bb485e6cb123 size: 3048
+Running image-upload-logic
